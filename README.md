@@ -179,22 +179,22 @@ Required environment variables:
 - `CROSSMINT_ENV=staging`
 - `PORT=3000`
 
-## What judges should look at
+## Key files
 
-If the judges ask for the GitHub repo, point them to:
+The main pieces of the project are:
 
-1. This README for the product/system overview
-2. [Architecture](/Users/shazilfarukh/Desktop/KYB-Agent/docs/architecture.md) for how the workflow actually works
-3. [`crossmint-server/server.js`](/Users/shazilfarukh/Desktop/KYB-Agent/crossmint-server/server.js) for the minting integration
-4. [Workflow](/Users/shazilfarukh/Desktop/KYB-Agent/docs/workflow.md) for the end-to-end story
-5. [Judge Q&A](/Users/shazilfarukh/Desktop/KYB-Agent/docs/judge-qa.md) for business framing and prepared answers
+1. This README for the product and system overview
+2. [Architecture](/Users/shazilfarukh/Desktop/KYB-Agent/docs/architecture.md) for the end-to-end design
+3. [`crossmint-server/server.js`](/Users/shazilfarukh/Desktop/KYB-Agent/crossmint-server/server.js) for the credential minting integration
+4. [Workflow](/Users/shazilfarukh/Desktop/KYB-Agent/docs/workflow.md) for the operational flow
+5. [Judge Q&A](/Users/shazilfarukh/Desktop/KYB-Agent/docs/judge-qa.md) for presentation framing and common questions
 
-## Team workflow summary
+## Components
 
 - Frontend / product demo: Lovable
-- Workflow logic: n8n
+- Workflow orchestration: n8n
 - Document extraction: MiniMax
 - Credential issuance: Crossmint
 - Hackathon backend hosting: Replit
 
-ClearOwn is intentionally a hybrid build. The value is in the orchestration, risk workflow, and portable credential flow, not only in a monolithic codebase.
+ClearOwn is intentionally a hybrid build. The value is in the orchestration, risk workflow, and portable credential flow rather than a single monolithic application.
