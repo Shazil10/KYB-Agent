@@ -1,0 +1,8 @@
+{
+  "ubo_name": "John Smith",
+  "entity": "HSBC Holdings",
+  "chain_depth": 3,
+  "risk_summary": "2 high-risk jurisdictions detected",
+  "verified_at": "2026-04-03T11:00:00Z",
+  "recipient_email": "demo@clearown.com"
+}

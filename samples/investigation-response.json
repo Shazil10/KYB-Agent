@@ -1,0 +1,26 @@
+{
+  "ubo_found": true,
+  "ubo_name": "John Smith",
+  "depth": 3,
+  "chain": [
+    {
+      "layer": 1,
+      "entity": "HSBC Holdings",
+      "jurisdiction": "United Kingdom",
+      "risk": "low"
+    },
+    {
+      "layer": 2,
+      "entity": "Meridian Trust Co",
+      "jurisdiction": "KY",
+      "risk": "high"
+    },
+    {
+      "layer": 3,
+      "entity": "BVI Capital Ltd",
+      "jurisdiction": "BVI",
+      "risk": "high"
+    }
+  ],
+  "risk_summary": "2 high-risk jurisdictions detected"
+}

@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "pending": false,
+  "action_id": "13e84fb3-0610-4a7f-88b5-6c1f384bd9ef",
+  "token_id": 8,
+  "tx_hash": "0xa16db39723fc499e833f55a500104a6211a93a1ba6d3822c8bd609ee4e54c85c",
+  "explorer_url": "https://sepolia.basescan.org/tx/0xa16db39723fc499e833f55a500104a6211a93a1ba6d3822c8bd609ee4e54c85c"
+}
