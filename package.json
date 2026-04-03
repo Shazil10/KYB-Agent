@@ -1,0 +1,12 @@
+{
+  "name": "kyb-agent",
+  "version": "1.0.0",
+  "description": "Autonomous KYB Agent resolving nested shell companies to find the Ultimate Beneficial Owner (UBO).",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

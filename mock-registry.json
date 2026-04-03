@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Oceanic Holdings LLC",
+    "type": "Company",
+    "ownedBy": "Isle of Man Trust Ltd"
+  },
+  {
+    "name": "Isle of Man Trust Ltd",
+    "type": "Company",
+    "ownedBy": "Vanguard Shell Corp"
+  },
+  {
+    "name": "Vanguard Shell Corp",
+    "type": "Company",
+    "ownedBy": "Alexander Vance"
+  },
+  {
+    "name": "Alexander Vance",
+    "type": "Human",
+    "riskStatus": "High - Politically Exposed Person"
+  }
+]
