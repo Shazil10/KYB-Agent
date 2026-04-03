@@ -8,6 +8,7 @@ ClearOwn is a hybrid agentic compliance product. The workflow spans multiple too
 - n8n handles orchestration, recursion, and workflow state
 - MiniMax extracts structured ownership information from messy text/documents
 - Crossmint issues the final portable KYB credential
+- Replit hosts the lightweight mint service used by the frontend during the hackathon
 
 ## End-to-end flow
 
@@ -21,12 +22,16 @@ The user enters:
 
 Lovable sends the investigation request to n8n via webhook.
 
-### 2. Recursive ownership tracing
+### 2. MiniMax extraction + recursive ownership tracing
 
 n8n:
 
 1. passes the document text to MiniMax
-2. extracts owners / jurisdictions / percentages
+2. extracts:
+   - entity name
+   - jurisdiction
+   - owners/shareholders
+   - ownership percentages when available
 3. determines whether the current owner is:
    - a human -> stop
    - another company -> recurse
@@ -53,7 +58,7 @@ Lovable renders:
 
 ### 5. Credential issuance
 
-When the user clicks `Issue KYB Passport`, Lovable calls the mint service, which:
+When the user clicks `Issue KYB Passport`, Lovable calls the Replit-hosted mint service, which:
 
 1. validates request data
 2. sends a mint request to Crossmint

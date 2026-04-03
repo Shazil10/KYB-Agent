@@ -6,9 +6,10 @@ Built for hackathon judges to see one end-to-end story:
 
 1. Upload or enter an entity in the Lovable app
 2. Trigger an n8n investigation workflow
-3. Resolve the ownership chain through nested entities
-4. Render the corporate tree and risk summary
-5. Mint a reusable KYB Passport via Crossmint on Base Sepolia
+3. Use MiniMax to extract structured ownership/entity data from raw text or documents
+4. Resolve the ownership chain through nested entities
+5. Render the corporate tree and risk summary
+6. Mint a reusable KYB Passport via Crossmint on Base Sepolia
 
 ## Why this matters
 
@@ -32,8 +33,9 @@ The strongest judge-facing flow is:
 
 - Lovable: frontend, demo flow, results, credential display
 - n8n: recursive orchestration / workflow logic
-- MiniMax: extraction of entity and ownership information from documents
+- MiniMax: AI extraction of entity and ownership information from documents
 - Crossmint: minting the portable KYB Passport
+- Replit: hackathon hosting layer for the mint service endpoint
 - Base Sepolia: on-chain proof of credential issuance
 
 ## Architecture
@@ -48,7 +50,7 @@ flowchart LR
     D -->|Human owner| F["UBO Resolved"]
     F --> G["Risk Summary + Corporate Tree"]
     G --> H["Lovable Results UI"]
-    H --> I["Crossmint Mint API"]
+    H --> I["Replit-hosted Crossmint Mint API"]
     I --> J["Base Sepolia Credential"]
 ```
 
@@ -85,6 +87,7 @@ Additional detail lives in:
 - [Architecture](/Users/shazilfarukh/Desktop/KYB-Agent/docs/architecture.md)
 - [Workflow](/Users/shazilfarukh/Desktop/KYB-Agent/docs/workflow.md)
 - [Demo script](/Users/shazilfarukh/Desktop/KYB-Agent/docs/demo-script.md)
+- [Judge Q&A](/Users/shazilfarukh/Desktop/KYB-Agent/docs/judge-qa.md)
 
 ## Repository structure
 
@@ -184,6 +187,7 @@ If the judges ask for the GitHub repo, point them to:
 2. [Architecture](/Users/shazilfarukh/Desktop/KYB-Agent/docs/architecture.md) for how the workflow actually works
 3. [`crossmint-server/server.js`](/Users/shazilfarukh/Desktop/KYB-Agent/crossmint-server/server.js) for the minting integration
 4. [Workflow](/Users/shazilfarukh/Desktop/KYB-Agent/docs/workflow.md) for the end-to-end story
+5. [Judge Q&A](/Users/shazilfarukh/Desktop/KYB-Agent/docs/judge-qa.md) for business framing and prepared answers
 
 ## Team workflow summary
 
@@ -191,5 +195,6 @@ If the judges ask for the GitHub repo, point them to:
 - Workflow logic: n8n
 - Document extraction: MiniMax
 - Credential issuance: Crossmint
+- Hackathon backend hosting: Replit
 
 ClearOwn is intentionally a hybrid build. The value is in the orchestration, risk workflow, and portable credential flow, not only in a monolithic codebase.

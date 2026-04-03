@@ -57,6 +57,13 @@ This is the piece judges should think of as the recursive investigation engine.
 - scores jurisdictions
 - returns result JSON
 
+### MiniMax
+
+- reads raw text or uploaded/extracted document content
+- converts messy ownership language into structured JSON
+- identifies likely owners/shareholders and ownership percentages
+- provides n8n with a clean object to recurse on
+
 ### Crossmint service
 
 - receives final verification payload
@@ -64,6 +71,12 @@ This is the piece judges should think of as the recursive investigation engine.
 - submits mint request
 - polls completion
 - returns action/transaction information
+
+### Replit
+
+- hosts the Crossmint mint API used during the hackathon demo
+- exposes `/api/`, `/api/test-mint`, and `/api/mint`
+- bridges Lovable and Crossmint without exposing secrets in the frontend
 
 ## Payload contracts
 
