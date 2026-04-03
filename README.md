@@ -52,6 +52,34 @@ flowchart LR
     I --> J["Base Sepolia Credential"]
 ```
 
+## n8n workflow snapshot
+
+The orchestration layer is built in n8n and follows the same recursive pattern shown below:
+
+```mermaid
+flowchart LR
+    A["Webhook"] --> B{"Input valid?"}
+    B -->|Yes| C["MiniMax Extract"]
+    C --> D["Normalize / classify owner"]
+    D --> E{"Human owner?"}
+    E -->|No| F["Registry HTTP request"]
+    F --> G["Transform lookup result"]
+    G --> D
+    E -->|Yes| H["Format UBO result"]
+    B -->|No| I["Fallback / error handler"]
+    I --> J["Respond to webhook"]
+    H --> J
+```
+
+This mirrors the live demo workflow:
+
+- webhook intake from Lovable
+- document/entity extraction via MiniMax
+- classification of current owner
+- recursive registry lookup if the owner is another company
+- final formatting of UBO, chain depth, and risk summary
+- webhook response back to Lovable
+
 Additional detail lives in:
 
 - [Architecture](/Users/shazilfarukh/Desktop/KYB-Agent/docs/architecture.md)

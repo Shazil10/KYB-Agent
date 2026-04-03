@@ -18,6 +18,27 @@ The intended demo sequence is:
 8. Show the credential card
 9. Open BaseScan to prove mint completion
 
+## n8n orchestration view
+
+The n8n layer is the backend brain of the demo. Conceptually it looks like this:
+
+```mermaid
+flowchart LR
+    A["Webhook Trigger"] --> B{"Has usable entity/doc input?"}
+    B -->|Yes| C["MiniMax Extract"]
+    C --> D["Code node: normalize extracted ownership"]
+    D --> E{"Owner is a company?"}
+    E -->|Yes| F["HTTP Request: registry lookup"]
+    F --> G["Code node: clean registry response"]
+    G --> D
+    E -->|No| H["Code node: final UBO result"]
+    B -->|No| I["Code node: fallback result"]
+    H --> J["Respond to Webhook"]
+    I --> J
+```
+
+This is the piece judges should think of as the recursive investigation engine.
+
 ## Operational workflow
 
 ### Lovable
